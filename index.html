@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily Routine Website</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header Section -->
+  <header>
+    <div class="profile">
+      <img src="IMG_20250217_124657_AI~2.jpg" alt="Profile Picture" class="profile-pic">
+      <h1>My Daily Routine</h1>
+    </div>
+    <div class="live-date-time">
+      <p id="date-time">Loading...</p>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Daily Routine Table -->
+    <section class="routine">
+      <h2>Daily Routine</h2>
+      <table class="google-sheet">
+        <thead>
+          <tr>
+            <th>Task</th>
+            <th>Start Time</th>
+            <th>End Time</th>
+            <th>Duration</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Office Work</td>
+            <td>8:00 AM</td>
+            <td>9:00 PM</td>
+            <td>13 Hours</td>
+          </tr>
+          <tr>
+            <td>Video Editing</td>
+            <td>9:00 PM</td>
+            <td>3:00 AM</td>
+            <td>6 Hours</td>
+          </tr>
+          <tr>
+            <td>Graphic Design</td>
+            <td>3:00 AM</td>
+            <td>5:00 AM</td>
+            <td>2 Hours</td>
+          </tr>
+          <tr>
+            <td>English Practice</td>
+            <td>5:00 AM</td>
+            <td>6:00 AM</td>
+            <td>1 Hour</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Income Statement Table -->
+    <section class="income-statement">
+      <h2>Income Statement</h2>
+      <table class="google-sheet">
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th>Amount ($)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Income</td>
+            <td>5000</td>
+          </tr>
+          <tr>
+            <td>Cost</td>
+            <td>3000</td>
+          </tr>
+          <tr>
+            <td>Savings</td>
+            <td>2000</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Google Calendar -->
+    <section class="calendar">
+      <h2>Google Calendar</h2>
+      <iframe src="https://calendar.google.com/calendar/embed?src=your-email@gmail.com&ctz=Asia%2FDhaka" style="border: 0" width="100%" height="400" frameborder="0" scrolling="no"></iframe>
+    </section>
+
+    <!-- Work Portfolio Schedule -->
+    <section class="work-portfolio">
+      <h2>Work Portfolio Schedule</h2>
+      <table class="google-sheet">
+        <thead>
+          <tr>
+            <th>Project</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Website Development</td>
+            <td>2023-10-01</td>
+            <td>2023-10-15</td>
+            <td>In Progress</td>
+          </tr>
+          <tr>
+            <td>Video Editing</td>
+            <td>2023-10-16</td>
+            <td>2023-10-20</td>
+            <td>Completed</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2023 My Daily Routine Website</p>
+  </footer>
+
+  <!-- JavaScript for Live Date and Time -->
+  <script>
+    function updateDateTime() {
+      const now = new Date();
+      const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' };
+      document.getElementById('date-time').textContent = now.toLocaleDateString('en-US', options);
+    }
+    setInterval(updateDateTime, 1000);
+    updateDateTime();
+  </script>
+</body>
+</html>
